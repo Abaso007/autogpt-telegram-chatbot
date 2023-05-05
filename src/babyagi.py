@@ -42,7 +42,7 @@ def prioritize_tasks(
 ) -> List[Dict]:
     """Prioritize tasks."""
     task_names = [t["task_name"] for t in task_list]
-    next_task_id = int(this_task_id) + 1
+    next_task_id = this_task_id + 1
     response = task_prioritization_chain.run(
         task_names=task_names, next_task_id=next_task_id, objective=objective
     )
